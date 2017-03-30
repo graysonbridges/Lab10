@@ -38,15 +38,33 @@ Hybrid<T>::~Hybrid()
    delete sldl;
 }
 
-//DO THIS
 //complete the implementation for the Hybrid ADT in two different ways
 //as outlined in the Lab 10 description
 //simply comment the first implementation out when working on the second implementation
 //use the getKey method to dequeue/remove
 
+template < class T >
+T* Hybrid<T>::isEmpty()
+{
+  return q->isEmpty();
+}
 
+template < class T >
+T* Hybrid<T>::dequeue()
+{
+  T* item;
+  item = q->dequeue();
+  sldl->remove(item->getKey());
 
+  return item;
+}
 
+template < class T >
+void QueueLinked<T>::enqueue(T* item)
+{
+  q->enqueue(item);
+  sldl->add(item);
+}
 
 
 #endif

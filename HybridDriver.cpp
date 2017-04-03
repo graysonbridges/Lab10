@@ -62,10 +62,12 @@ int main()
 	  counter++;
    }
    cout << "\n\n\n Counter: " << counter << "\n\n\n" << endl;
-   delete h;
-
    deleteCDs(cds);
+   cout << "1" << endl;
    delete cds;
+   cout << "2" << endl;
+   delete h;
+   cout << "3" << endl;
    return 0;
 }
 
